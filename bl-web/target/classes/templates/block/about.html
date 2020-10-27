@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments.html::head(~{::title})">
+    <title>关于我</title>
+</head>
+<body>
+    <!--导航-->
+    <div th:replace="_fragments::navigation(5)"></div>
+
+    <!-- 中间内容 -->
+    <div class="m-container m-padded-tb-big">
+        <div class="ui container" style="margin-top: 30px;">
+            <div class="ui stackable grid">
+                <div class="eleven wide column">
+                    <div class="ui purple segment slide masked reveal image">
+                        <img src="https://unsplash.it/750/500?image=791" alt="" class="ui visible content">
+                        <img src="https://unsplash.it/750/500" class="hidden content">
+                    </div>
+                </div>
+                <div class="five wide column">
+                    <div class="ui top attached segment">
+                        <div class="ui header">关于我&nbsp;&nbsp;<i class="cn flag"></i></div>
+                    </div>
+                    <div class="ui attached segment">
+                        <p class="m-text">WBlog，一个独立开发者，折腾在0和1世界的菜鸟；一个终生学习者，誓将学习无限循环，希望结识可以共同成长的小伙伴</p>
+                        <p class="m-text">热爱编程，喜欢折腾，正在探索高效学习编程技术的方法......</p>
+                    </div>
+                    <div class="ui attached segment">
+                        <a class="ui black label m-margin-top-tiny">编程</a>
+                        <a class="ui blue label m-margin-top-tiny">思考</a>
+                        <a class="ui orange label m-margin-top-tiny">运动</a>
+                        <a class="ui green label m-margin-top-tiny">写作</a>
+                        <a class="ui purple label m-margin-top-tiny">音乐</a>
+                    </div>
+                    <div class="ui attached segment">
+                        <a class="ui teal tag label small m-margin-top-tiny">JAVA</a>
+                        <a class="ui teal tag label small m-margin-top-tiny">JavaScript</a>
+                        <a class="ui teal tag label small m-margin-top-tiny">Photoshop</a>
+                        <a class="ui teal tag label small m-margin-top-tiny">HTML</a>
+                        <a class="ui teal tag label small m-margin-top-tiny">Jsp+Servlet</a>
+                        <a class="ui teal tag label small m-margin-top-tiny">C/C++</a>
+                        <a class="ui teal tag label small m-margin-top-tiny">MySQL</a>
+                        <a class="ui teal tag label small m-margin-top-tiny">SpringBoot</a>
+                        <a class="ui teal tag label small m-margin-top-tiny">Linux</a>
+
+                    </div>
+                    <div class="ui bottom attached segment">
+                        <a href="" class="ui circular icon button"><i class="github icon"></i></a>
+                        <a id="wechat" class="ui wechat circular icon button"><i class="wechat icon"></i></a>
+                        <a id="qq" class="ui circular icon button" data-content="3101965890" data-position="bottom center">
+                            <i class="qq icon"></i>
+                        </a>
+                    </div>
+                    <div id="wechartH" class="ui wechat-qr flowing popup transition hidden">
+                        <img th:src="@{/img/wechat.png}" alt="" class="ui rounded image" style="width: 100px">
+                    </div>
+                    <div id="qqH" class="ui wechat-qr flowing popup transition hidden">
+                        <img th:src="@{/img/qq.png}" alt="" class="ui rounded image" style="width: 100px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+
+    <!--底部footer-->
+    <footer th:replace="_fragments::footer"></footer>
+<script>
+    $('.menu.toggle').click(function (){
+        $('.m-item').toggleClass('m-mobile-hide');
+    })
+    $('#wechat').mouseover(function (){
+        $('#wechartH').attr('class','ui wechat-qr flowing transition');
+    })
+    $('#wechat').mouseout(function (){
+        $('#wechartH').attr('class','ui wechat-qr flowing popup transition hidden');
+    })
+    $('#qq').mouseover(function (){
+        $('#qqH').attr('class','ui wechat-qr flowing transition');
+    })
+    $('#qq').mouseout(function (){
+        $('#qqH').attr('class','ui wechat-qr flowing popup transition hidden');
+    })
+</script>
+</body>
+</html>

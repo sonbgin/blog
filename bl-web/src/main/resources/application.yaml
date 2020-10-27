@@ -1,0 +1,36 @@
+spring:
+  #数据库连接配置
+  datasource:
+    username: root
+    password: mysqlStart
+    #报错则需添加上时区 serverTimezone=UTC
+    #url: jdbc:mysql://47.94.154.12:3306/blog?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/blog?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    #type: org.springframework.jdbc.datasource.DriverManagerDataSource
+
+    #druid专属配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+
+    #配置监控统计拦截的filter, stat:监控统计、log4j:日志记录、wall:防止sql注入
+    #如果允许时报错java.lang.ClassNotFoundException:org.apache.log4j.priority
+    #则导入log4j 依赖即可， Maven: 地址：https://mvnrepository.com/artifact/log4j/log4j
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnerctionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql

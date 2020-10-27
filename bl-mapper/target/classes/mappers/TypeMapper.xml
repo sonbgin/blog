@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TypeMapper">
+    <resultMap id="type-blog" type="entity.Type">
+        <association property="blogs" column="id" javaType="arraylist"
+                     select="mapper.BlogMapper.selectBlogByTypeId">
+        </association>
+    </resultMap>
+
+    <insert id="insertType">
+        insert into b_type(id,name) values(default,#{name})
+    </insert>
+    <update id="updateType">
+        update b_type set name=#{name} where id=#{id}
+    </update>
+    <delete id="deleteType">
+        delete from b_type where id=#{id}
+    </delete>
+    <select id="selectAllTypes" resultType="entity.Type">
+        select id,name from b_type
+    </select>
+    <select id="selectType" resultType="entity.Type">
+        select * from b_type where id=#{id}
+    </select>
+    <select id="selectTypeByName" resultType="entity.Type">
+        select * from b_type where name=#{name}
+    </select>
+</mapper>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments.html::head(~{::title})">
+    <title>标签</title>
+</head>
+<body>
+    <!--导航-->
+    <div th:replace="_fragments::navigation(3)"></div>
+
+    <!--中间内容 grid 分16份-->
+    <div class="m-container-small m-padded-top">
+        <!--header-->
+        <div class="ui attached segment">
+            <div class="ui middle aligned  two column grid">
+                <div class="column">
+                    <h3 class="ui teal header">标签</h3>
+                </div>
+                <div class="right aligned column">
+                    共<h3 class="ui orange header m-inline-block m-text-thin" th:text="${#arrays.length(tags)}">14</h3>个
+                </div>
+            </div>
+        </div>
+        <div class="ui attached segment">
+            <div class="ui attached segment m-padded-tb-large">
+                <div class="ui labeled button m-margin-top-tiny" th:each="tag:${tags}">
+                    <a href="#" th:href="@{/ordinary/tag/{id}(id=${tag.id})}" class="ui basic button" th:classappend="${tag.id}==${session.id} ? 'teal'" th:text="${tag.name}">移动开发</a>
+                    <div class="ui basic left pointing label" th:classappend="${tag.id}==${session.id} ? 'teal'" th:text="${#arrays.length(tag.blogs)}">12</div>
+                </div>
+            </div>
+            <div class="ui grid" th:each="blog:${blogs.list}">
+                <div class="two wide column"></div>
+                <div class="twelve wide column">
+                    <div class="ui padded vertical segment m-padded-big">
+                        <div class="ui mobile reversed stackable grid">
+                            <div class="eleven wide column">
+                                <a th:href="@{/ordinary/toBlog/{id}(id=${blog.id})}"><h3 class="ui header" th:text="${blog.title}">springboot</h3></a>
+                                <p class="m-text" th:text="${blog.description}">爷爷的手陪他坐在院子里，两人的对话让人笑着笑着就哭了】近日，山东威海，一位婚礼摄影师在婚礼当天拍下了令人动容的一幕</p>
+                                <div class="ui mini grid">
+                                    <div class="eleven wide column">
+                                        <div class="ui horizontal link list">
+                                            <div class="item">
+                                                <img alt="" class="ui avatar image content-img-bottom" th:src="${blog.user.avatar}" src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1601213821&di=8a6b9a1b6787a3eb398c271799cec8d9&src=http://a3.att.hudong.com/55/22/20300000929429130630222900050.jpg" >
+                                                <div class="content"><a href="#" class="header" th:text="${blog.user.username}">吴承恩</a></div>
+                                            </div>
+                                            <div class="item">
+                                                <i class="calendar icon"></i><span th:text="${#dates.format(blog.createTime,'yyyy-MM-dd HH:mm:ss')}">2020-09-27</span>
+                                            </div>
+                                            <div class="item">
+                                                <i class="eye icon"></i><span th:text="${blog.views}">2020</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right aligned five wide column">
+                                        <a href="#" th:href="@{/ordinary/type/{id}(id=${blog.type.id})}" class="ui teal basic label m-padded-padding" target="_self" th:text="${blog.type.name}">认知升级</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="five wide column">
+                                <a href="#" target="_blank">
+                                    <img th:src="@{${blog.firstPicture}}" src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1601213821&di=8a6b9a1b6787a3eb398c271799cec8d9&src=http://a3.att.hudong.com/55/22/20300000929429130630222900050.jpg" class="ui rounded image content-img" alt="图片加载失败">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--footer-->
+        <div class="ui bottom attached segment" th:if="${blogs.pages}>1">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <a th:href="@{/ordinary/tag(pageNum=${blogs.pageNum}-1)}" class="item" th:unless="${blogs.isFirstPage}">上一页</a>
+                </div>
+                <div class="right aligned column">
+                    <a th:href="@{/ordinary/tag(pageNum=${blogs.pageNum}+1)}" class="item" th:unless="${blogs.isLastPage}">上一页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--底部footer-->
+    <footer th:replace="_fragments::footer"></footer>
+<script>
+    $('.menu.toggle').click(function (){
+        $('.m-item').toggleClass('m-mobile-hide');
+    })
+</script>
+</body>
+</html>

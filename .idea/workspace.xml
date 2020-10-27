@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ac190093-d2b1-4d37-90ce-4cdf818d4953" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\workingspace\java\repository" />
+        <option name="mavenHome" value="D:\Lapp\IntelliJ IDEA 2020.2\plugins\maven\lib\maven3" />
+        <option name="userSettingsFile" value="D:\Lapp\apache-maven-3.6.3-bin\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jPj2VaHSvmXFlXx5ECfvdddP6Z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/bl-web/src/main/java/config/MyExceptionHandler.java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workingspace\java\IDEA\blog\bl-web\src\main\resources" />
+      <recent name="D:\workingspace\java\IDEA\blog\bl-util\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workingspace\java\IDEA\blog\bl-mapper\src\main\resources" />
+      <recent name="D:\workingspace\java\IDEA\blog\bl-util\src\main\java" />
+      <recent name="D:\workingspace\java\IDEA\blog\bl-mapper\src\main\java" />
+      <recent name="D:\workingspace\java\IDEA\blog\util\src\main\java" />
+      <recent name="D:\workingspace\java\IDEA\blog\bl-service\src\main\java" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="bl-web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.BlogApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac190093-d2b1-4d37-90ce-4cdf818d4953" name="Default Changelist" comment="" />
+      <created>1603712419179</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603712419179</updated>
+      <workItem from="1603712425199" duration="4975000" />
+      <workItem from="1603718882878" duration="673000" />
+      <workItem from="1603726726957" duration="167000" />
+      <workItem from="1603763476133" duration="20573000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="407" y="187" key="#Notifications" timestamp="1603807718148">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="407" y="187" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1603807718148" />
+    <state x="163" y="0" key="#Project_Structure" timestamp="1603768316057">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1603768316057" />
+    <state x="301" y="42" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1603807545624">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="301" y="42" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1366.728@0.0.1366.728" timestamp="1603807545624" />
+    <state x="330" y="287" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1603768893269">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="330" y="287" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1603768893269" />
+    <state x="459" y="231" width="447" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1603764365743">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="459" y="231" width="447" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1603764365743" />
+    <state x="462" y="244" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1603768894527">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="244" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1366.728@0.0.1366.728" timestamp="1603768894527" />
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603766987947">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1603766987947" />
+    <state x="124" y="98" width="1182" height="544" maximized="true" key="DiffContextDialog" timestamp="1603767102508">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="124" y="98" width="1182" height="544" maximized="true" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1603767102508" />
+    <state x="463" y="71" key="FileChooserDialogImpl" timestamp="1603807824514">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="71" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603807824514" />
+    <state x="494" y="283" key="Github.CreateGistDialog" timestamp="1603807295628">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="494" y="283" key="Github.CreateGistDialog/0.0.1366.728@0.0.1366.728" timestamp="1603807295628" />
+    <state x="555" y="261" width="256" height="280" key="Github.ShareDialog" timestamp="1603807187630">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="555" y="261" width="256" height="280" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1603807187630" />
+    <state width="1323" height="215" key="GridCell.Tab.0.bottom" timestamp="1603807373052">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="215" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603807373052" />
+    <state width="1323" height="215" key="GridCell.Tab.0.center" timestamp="1603807373052">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="215" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1603807373052" />
+    <state width="1323" height="215" key="GridCell.Tab.0.left" timestamp="1603807373050">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="215" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1603807373050" />
+    <state width="1323" height="215" key="GridCell.Tab.0.right" timestamp="1603807373052">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="215" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1603807373052" />
+    <state width="1323" height="215" key="GridCell.Tab.1.bottom" timestamp="1603807373053">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="215" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1603807373053" />
+    <state width="1323" height="215" key="GridCell.Tab.1.center" timestamp="1603807373053">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="215" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1603807373053" />
+    <state width="1323" height="215" key="GridCell.Tab.1.left" timestamp="1603807373053">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="215" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1603807373053" />
+    <state width="1323" height="215" key="GridCell.Tab.1.right" timestamp="1603807373053">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="215" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1603807373053" />
+    <state x="263" y="98" key="IDE.errors.dialog" timestamp="1603807875780">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="263" y="98" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1603807875780" />
+    <state x="213" y="19" key="Maven.ArtifactSearchDialog" timestamp="1603716688852">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="213" y="19" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1603716688852" />
+    <state x="323" y="67" key="NewModule_or_Project.wizard" timestamp="1603765035817">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="323" y="67" key="NewModule_or_Project.wizard/0.0.1366.728@0.0.1366.728" timestamp="1603765035817" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1603807909443">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1603807909443" />
+    <state x="115" y="49" key="new project wizard" timestamp="1603764413921">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="115" y="49" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1603764413921" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1603803037765">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1603803037765" />
+    <state x="513" y="155" key="svn.repositoryBrowser" timestamp="1603807494270">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="513" y="155" key="svn.repositoryBrowser/0.0.1366.728@0.0.1366.728" timestamp="1603807494270" />
+  </component>
+</project>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--头-->
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title th:replace="${title}"></title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/me.css}">
+</head>
+<!--导航-->
+<div th:fragment="navigation(n)">
+    <nav class="ui inverted attached segment m-padded-top-mini">
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">Blog</h2>
+                <a th:href="@{/ordinary/toIndex}" class="m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="home icon"></i>首页</a>
+                <a th:href="@{/ordinary/toType}" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="idea icon"></i>分类</a>
+                <a th:href="@{/ordinary/toTag}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="tags icon"></i>标签</a>
+                <a th:href="@{/ordinary/toArchive}" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class="clone icon"></i>归档</a>
+                <a th:href="@{/ordinary/toAbout}" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'"><i class="info icon"></i>关于我</a>
+                <div class="right item m-mobile-hide">
+                    <form id="searchSub" action="#" th:action="@{/ordinary/toSearch}" method="post">
+                        <div class="ui icon inverted transparent input">
+                            <input type="text" placeholder="Search..." name="search"/>
+                            <i onclick="document.forms['searchSub'].submit()" class="search link icon"></i>
+                        </div>
+                    </form>
+                </div>
+                <div class="item m-mobile-hide" th:if="${session.user}==null">
+                    <a href="" th:href="@{/admin}"><input type="button" value="登录" style="width: 60px;height: 30px;background-color: #b36539"/></a>
+                </div>
+                <div class="item m-mobile-hide" th:if="${session.user}!=null">
+                    <a href="" th:href="@{/admin/logout}"><input type="button" value="注销" style="width: 60px;height: 30px;background-color: #b36539"/></a>
+                </div>
+                <div class="item m-mobile-hide" th:if="${session.user}!=null">
+                    <a href="" th:href="@{/admin/toBlogs}"><input type="button" value="后台管理" style="width: 80px;height: 30px;background-color: #b36539"/></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-mobile-show" style="position: absolute;top: 0;right: 0">
+            <i class="sidebar icon"></i>
+        </a>
+
+    </nav>
+</div>
+<!--底部footer-->
+<footer th:fragment="footer" class="ui inverted attached segment m-padded-top-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="ui item">
+                        <img th:src="@{/img/wechat.png}" class="ui rounded image" alt="我的二维码丢了" style="width: 100px;height: 100px">
+                    </div>
+                </div>
+            </div>
+            <div class="four wide column">
+                <div th:fragment="footer_blog" id="container-context">
+                    <h4 class="ui inverted  header m-text-thin m-text-spaced m-opacity-mini">最新博客</h4>
+                    <div class="ui inverted link list" th:each="blog,blogStart:${recommendBlog}">
+                        <a href="#" th:unless="${blogStart.count} > 3" th:href="@{/ordinary/toBlog/{id}(id=${blog.id})}" class="item m-text-thin m-text-spaced m-opacity-mini" th:text="${blog.title}">用户故事 (User Story)</a>
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted  header m-text-thin m-text-spaced m-opacity-mini">联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item m-text-thin m-text-spaced m-opacity-mini" th:text="#{blogger.email}">E-mail 1692876458@qq.com</a>
+                    <a href="#" class="item m-text-thin m-text-spaced m-opacity-mini" th:text="#{blogger.qq}">qq: 1692876458</a>
+                </div>
+            </div>
+            <div class="six wide column">
+                <h4 class="ui inverted  header m-text-thin m-text-spaced m-opacity-mini">Blog</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item m-text-thin m-text-spaced m-opacity-mini" th:text="#{blogger.description}">这是我的个人博客 希望大家多多指教</a>
+                </div>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-mini" th:text="#{blogger.footer}">Copyright@2020-2021Songbin Designed by Songbin</p>
+    </div>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery-scrollTo/1.4.10/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" th:src="@{/lib/editormd/editormd.min.js}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script>
+        $('#container-context').load("/ordinary/footer");
+    </script>
+</footer>
+</html>

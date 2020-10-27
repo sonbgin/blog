@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_admin::head(~{::title})">
+    <title>博客管理</title>
+</head>
+<body>
+    <!--导航-->
+    <div th:replace="_admin::nav(1)"></div>
+    <div class="ui attached pointing menu">
+        <div class="ui container">
+            <div class="right menu">
+                <a href="#" class="item">发布</a>
+                <a href="#" class="teal active item">列表</a>
+            </div>
+        </div>
+    </div>
+    <!--中间内容 grid 分16份-->
+    <div class="ui m-container-small m-padded-tb-big">
+        <form th:action="@{/admin/blogs}" method="post" class="ui secondary segment form">
+            <div class="inline fields">
+                <div class="field">
+                    <input type="text" name="title" placeholder="标题">
+                </div>
+                <div class="field">
+                    <div class="ui selection dropdown">
+                        <input type="hidden" name="typeId">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">类型</div>
+                        <div class="menu">
+                            <div class="item" th:each="type: ${types}" th:data-value="${type.id}" th:text="${type.name}">错误日志</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" id="recommend" name="recommend">
+                        <label for="recommend">推荐</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <button class="ui mini teal basic submit button"><i class="search icon"></i>搜索</button>
+                </div>
+            </div>
+        </form>
+        <table class="ui table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>标题</th>
+                    <th>类型</th>
+                    <th>推荐</th>
+                    <th>更新时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td th:unless="${findNothing}==null" th:text="${findNothing}" style="color: red"></td></tr>
+                <tr th:if="${findNothing} == null" th:each="blog,blogStart : ${blogs.list}">
+                    <td th:text="${blogStart.count}">1</td>
+                    <td th:text="${blog.title}">可以学习清单</td>
+                    <td th:text="${blog.type.name}">认知升级</td>
+                    <td th:text="${blog.recommend} ? '是':'否'">是</td>
+                    <td th:text="${blog.publish} ? '发布':'草稿'">草稿</td>
+                    <td th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm:ss')}">2017-9-2</td>
+                    <td>
+                        <a th:href="@{/admin/blogs/{id}/input(id=${blog.id})}" class="ui mini teal basic button">编辑</a>
+                        <a th:href="@{/admin/blogs/{id}/delete(id=${blog.id})}" class="ui mini red basic button">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="7">
+                        <div class="ui mini pagination menu" th:if="${blogs.pages}>1">
+                            <a th:href="@{/admin/toBlogs(pageNum=${blogs.pageNum}-1)}" class="item" th:unless="${blogs.isFirstPage}">上一页</a>
+                            <a th:href="@{/admin/toBlogs(pageNum=${blogs.pageNum}+1)}" class="item" th:unless="${blogs.isLastPage}">下一页</a>
+                        </div>
+                        <a th:href="@{/admin/blogs/input}" class="ui mini right floated teal basic button">新增</a>
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <!--底部footer-->
+    <footer th:replace="_fragments::footer"></footer>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script>
+    $('.menu.toggle').click(function (){
+        $('.m-item').toggleClass('m-mobile-hide');
+    })
+    $('.ui.dropdown').dropdown({
+        on : 'hover'
+    });
+</script>
+</body>
+</html>

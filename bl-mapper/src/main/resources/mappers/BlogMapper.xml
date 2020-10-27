@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.BlogMapper">
+
+    <resultMap id="blog-type-user" type="entity.Blog">
+        <association property="type" column="type_id" javaType="entity.Type"
+                     select="mapper.TypeMapper.selectType"/>
+        <association property="user" column="user_id" javaType="entity.User"
+                     select="mapper.UserMapper.selectUserbyId"/>
+    </resultMap>
+    <resultMap id="blog-user" type="entity.Blog">
+        <association property="user" column="user_id" javaType="entity.User"
+                     select="mapper.UserMapper.selectUserbyId"/>
+    </resultMap>
+
+    <insert id="insertBlog">
+        insert into b_blog(id,title,content,first_picture,flag,views,appreciation,share_statement,comment_table,publish,recommend,create_time,update_time,user_id,type_id,tag_ids,description) values(default ,#{title},#{content},#{firstPicture},#{flag},#{views},#{appreciation},#{shareStatement},#{commentTable},#{publish},#{recommend},#{createTime},#{updateTime},#{user.id},#{type.id},#{tagIds},#{description})
+    </insert>
+    <update id="updateBlog">
+        update b_blog set title=#{title},content=#{content},first_picture=#{firstPicture},flag=#{flag},views=#{views},appreciation=#{appreciation},share_statement=#{shareStatement},comment_table=#{commentTable},publish=#{publish},recommend=#{recommend},type_id=#{type.id},tag_ids=#{tagIds},update_time=#{updateTime},description=#{description} where id=#{id}
+    </update>
+    <delete id="deleteBlog">
+        delete from b_blog where id=#{id}
+    </delete>
+    <select id="selectBlogList" resultType="entity.Blog" resultMap="blog-type-user">
+        select * from b_blog
+        <where>
+            <choose>
+                <when test="title != null and title != ''">
+                    and title like concat('%',#{title},'%')
+                </when>
+                <when test="typeId != -1 and typeId != ''">
+                    and type_id=#{typeId}
+                </when>
+                <when test="true">
+                    or recommend=#{recommend}
+                </when>
+            </choose>
+        </where>
+    </select>
+    <select id="selectBlogById" resultType="entity.Blog" resultMap="blog-type-user">
+        select * from b_blog where id=#{id}
+    </select>
+    <select id="selectAllBlog" resultType="entity.Blog" resultMap="blog-type-user">
+        select * from b_blog
+    </select>
+    <select id="selectBlogByTagId" resultType="entity.Blog" resultMap="blog-type-user">
+        select * from b_blog where tag_ids like concat('%',#{id},'%')
+    </select>
+    <select id="selectBlogByTypeId" resultType="entity.Blog" resultMap="blog-user">
+        select * from b_blog where type_id=#{id}
+    </select>
+    <select id="selectBlogIsRecommend" resultType="entity.Blog">
+        select * from b_blog where recommend=#{flag}
+    </select>
+    <select id="selectBlogListForSearch" resultType="entity.Blog" resultMap="blog-type-user">
+        select * from b_blog where title like concat('%',#{search},'%') or content like concat('%',#{search},'%')
+    </select>
+    <select id="selectTimeYList" resultType="java.lang.String">
+        select date_FORMAT(create_time,'%Y') from b_blog
+    </select>
+    <select id="selectBlogByTimeY" resultType="entity.Blog">
+        select * from b_blog where create_time like concat('%',#{year},'%')
+    </select>
+    <select id="selectBlogCount" resultType="java.lang.Integer">
+        select count(*) from b_blog
+    </select>
+</mapper>

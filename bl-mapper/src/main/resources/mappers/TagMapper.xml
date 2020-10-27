@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TagMapper">
+    <resultMap id="tag-blog" type="entity.Tag">
+        <association property="blogs" column="id" javaType="arraylist"
+                     select="mapper.BlogMapper.selectBlogByTagId">
+        </association>
+    </resultMap>
+    <insert id="insertTag">
+        insert into b_tag(id,name) values(default,#{name})
+    </insert>
+    <update id="updateTag">
+        update b_tag set name=#{name} where id=#{id}
+    </update>
+    <delete id="deleteTag">
+        delete from b_tag where id=#{id}
+    </delete>
+
+    <select id="selectAllTags" resultType="entity.Tag">
+        select * from b_tag
+    </select>
+    <select id="selectTag" resultType="entity.Tag">
+        select * from b_tag where id=#{id}
+    </select>
+    <select id="selectTagByName" resultType="entity.Tag">
+        select * from b_tag where name=#{name}
+    </select>
+</mapper>

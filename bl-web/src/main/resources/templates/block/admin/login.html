@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>博客管理登录</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" th:href="@{/css/me.css}">
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <div class="ui container" style="max-width: 400px !important;">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h2 class="ui teal image header">
+                    <img th:src="@{/img/logo.jpg}" alt="logo" class="ui avatar image">
+                    <div class="content">
+                        欢迎来到登录页面
+                    </div>
+                </h2>
+                <br>
+                <span style="border: none !important;color: red;" th:unless="${#strings.isEmpty(session.adminMsg)}" th:text="${session.adminMsg}"></span>
+                <br>
+                <form class="ui large form" method="post" th:action="@{/admin}">
+                    <div class="ui stacked segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="username" placeholder="用户名">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="password" name="password" placeholder="密码">
+                            </div>
+                        </div>
+                        <div class="ui fluid large teal">
+                            <input type="submit" value="登录" style="width: 100%;height: 30px;font-size: 14px;color: deepskyblue">
+                        </div>
+                        <div class="ui fluid large teal">
+                            <a th:href="@{/ordinary/toIndex}"><input type="button" value="游客浏览" style="width: 100%;height: 30px;font-size: 14px;color: deepskyblue"></a>
+                        </div>
+                    </div>
+                    <div class="ui error message"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script th:src="@{/js/jquery.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script>
+    $(document)
+        .ready(function() {
+            $('.ui.form')
+                .form({
+                    fields: {
+                        username: {
+                            identifier  : 'username',
+                            rules: [
+                                {
+                                    type   : 'empty',
+                                    prompt : 'Please enter your username'
+                                },
+                            ]
+                        },
+                        password: {
+                            identifier  : 'password',
+                            rules: [
+                                {
+                                    type   : 'empty',
+                                    prompt : 'Please enter your password'
+                                },
+                                {
+                                    type   : 'length[6]',
+                                    prompt : 'Your password must be at least 6 characters'
+                                }
+                            ]
+                        }
+                    }
+                })
+            ;
+        })
+    ;
+</script>
+</body>
+</html>
